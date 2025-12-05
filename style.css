@@ -13,9 +13,9 @@
 a {
     text-decoration: none;
     color: grey;
-  }
+}
 
-a:hover{
+a:hover {
     text-decoration: none;
     color: black;
 }
@@ -28,6 +28,7 @@ a:hover{
 }
 
 body {
+    /* Using your original path */
     background: url('DesignPhotos/Black\ And\ White\ Animation\ GIF\ by\ James\ Zanoni.gif') no-repeat center center fixed; 
     background-size: cover;
     min-height: 100vh;
@@ -38,13 +39,8 @@ body {
     padding: 20px;
 }
 
-#main-container {
-    width: 100%;
-    max-width: 1000px;
-    position: relative;
-    height: 80vh; 
-    min-height: 600px;
-    overflow: hidden; 
+input[type="radio"], input[type="checkbox"] {
+    display: none;
 }
 
 .view-section {
@@ -57,8 +53,28 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
-.view-section.active {
+#nav-home:checked ~ #main-container #homeSection,
+#nav-projects:checked ~ #main-container #projectsSection,
+#nav-activity:checked ~ #main-container #activitySection,
+#nav-programming:checked ~ #main-container #programmingSection,
+#nav-animation:checked ~ #main-container #animationSection,
+#nav-multimedia:checked ~ #main-container #multimediaSection,
+#nav-prototypes:checked ~ #main-container #prototypesSection,
+#nav-reflection:checked ~ #main-container #reflectionSection {
     display: flex;
+}
+
+.modal-toggle:checked ~ .modal-overlay {
+    display: flex;
+}
+
+#main-container {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    height: 80vh; 
+    min-height: 600px;
+    overflow: hidden; 
 }
 
 @keyframes fadeIn {
@@ -102,6 +118,20 @@ body {
     margin-bottom: 30px;
 }
 
+.custom-separator {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    margin: 10px 0 20px 0;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px; 
+}
+
 .profile-pic {
     width: 120px;
     height: 120px;
@@ -112,11 +142,65 @@ body {
     border: 4px solid #fff;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    flex-shrink: 0;
 }
 
 .profile-pic:hover{
     background-image: url('DesignPhotos/lebron-sunshine-lebron-james-sunshine.gif');
     background-position: right 8px center;
+}
+
+.hover-hint {
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    margin-left: 15px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.9;
+    pointer-events: none;
+    width: 100px;
+}
+
+.hint-text {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+    transform: rotate(-10deg);
+    white-space: nowrap;
+}
+
+.hint-arrow {
+    width: 70px; 
+    height: 50px;
+    margin-top: -5px;
+    margin-left: -40px; 
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5));
+}
+
+.arrow-path {
+    stroke-dasharray: 100; 
+    stroke-dashoffset: 100; 
+    animation: drawArrow 2s infinite ease-out; 
+}
+
+@keyframes drawArrow {
+    0% {
+        stroke-dashoffset: 100;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    70% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
 }
 
 #name {
@@ -139,19 +223,27 @@ body {
     font-style: italic;
 }
 
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 .contact {
     font-size: 0.9rem;
     color: #aaa;
-    margin: 2px 0;
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid #444;
-    padding-top: 5px;
-    margin-top: 5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.contact:first-of-type {
-    border-top: none;
+.contact i {
+    color: #fff; /* Icon color */
+    font-size: 1rem;
 }
 
 #buttons {
@@ -161,6 +253,11 @@ body {
     margin-bottom: 20px;
 }
 
+.button, .project, .back-btn {
+    cursor: pointer;
+    user-select: none;
+}
+
 .button {
     background-color: var(--button-bg);
     color: var(--button-text);
@@ -168,10 +265,10 @@ body {
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-    cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     text-align: center;
+    display: inline-block; 
 }
 
 .button:hover {
@@ -211,7 +308,6 @@ body {
     border-radius: 15px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
@@ -235,16 +331,21 @@ body {
     flex-wrap: wrap;
 }
 
+.card-wrapper {
+    width: 30%;
+    min-width: 200px;
+}
+
 .projectCard {
     background-color: #444;
     border-radius: 10px;
-    width: 30%;
-    min-width: 200px;
+    width: 100%; 
     padding: 15px;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.2s;
     cursor: pointer; 
+    display: block; 
 }
 
 .projectCard:hover {
@@ -277,11 +378,8 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: transparent;
     color: white;
-    border: none;
     font-size: 1.5rem;
-    cursor: pointer;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
@@ -304,8 +402,8 @@ body {
     60% {transform: translateY(-5px);}
 }
 
-#projectModal {
-    display: none;
+.modal-overlay {
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -318,6 +416,16 @@ body {
     align-items: center;
     justify-content: center;
     animation: fadeIn 0.3s;
+    cursor: default; 
+}
+
+.modal-close-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .modal-content {
@@ -335,9 +443,10 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    z-index: 1001;
 }
 
-.close-modal {
+.close-modal-btn {
     color: #aaa;
     position: absolute;
     top: 15px;
@@ -348,28 +457,15 @@ body {
     transition: color 0.2s;
 }
 
-.close-modal:hover {
+.close-modal-btn:hover {
     color: #fff;
 }
 
-#modalImage {
+.modal-img-preview {
     width: 100%;
     max-height: 300px;
     object-fit: fill;
     border-radius: 8px;
     margin-bottom: 20px;
     background-color: #333;
-}
-
-#modalTitle {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-#modalDescription {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #ccc;
-    text-align: justify;
 }

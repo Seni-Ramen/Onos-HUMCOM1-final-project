@@ -4,49 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <input type="radio" name="nav" id="nav-home" checked>
+    <input type="radio" name="nav" id="nav-projects">
+    <input type="radio" name="nav" id="nav-activity">
+    <input type="radio" name="nav" id="nav-programming">
+    <input type="radio" name="nav" id="nav-animation">
+    <input type="radio" name="nav" id="nav-multimedia">
+    <input type="radio" name="nav" id="nav-prototypes">
+    <input type="radio" name="nav" id="nav-reflection">
 
     <div id="main-container">
-        <div id="homeSection" class="view-section active">
+        
+        <div id="homeSection" class="view-section">
             <div class="content-card">
-                <div class="profile-pic"></div>
+                
+                <div class="profile-wrapper">
+                    <div class="profile-pic"></div>
+                    <div class="hover-hint">
+                        <span class="hint-text">Hover Me</span>
+                        <svg class="hint-arrow" viewBox="0 0 70 50" preserveAspectRatio="none">
+                            <path class="arrow-path" d="M 60 5 Q 35 5 2 25" fill="none" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="white" />
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
 
                 <div id="personalDetails">
                     <h1 id="name">Jezreel M. Onos</h1>
                     <h2 id="aboutMe">ABOUT ME:</h2>
                     <h2 id="selfDescription">I am a Person</h2>
                     
-                    <div style="margin-top: 20px; width: 100%;">
-                        <p id="number" class="contact">Phone Number: 09876543210</p>
-                        <p id="email" class="contact">Email: 20256388@s.ubaguio.edu</p>
-                        <p id="gitHub" class="contact">github: <a href="https://github.com/Seni-Ramen" id="gitHub">Seni-Ramen</a></p>
+                    <div class="contact-container">
+                        <p id="number" class="contact"><i class="fas fa-phone"></i> 09876543210</p>
+                        <p id="email" class="contact"><i class="fas fa-envelope"></i> 20256388@s.ubaguio.edu</p>
+                        <p id="gitHub" class="contact"><i class="fab fa-github"></i> <a href="https://github.com/Seni-Ramen" id="gitHub">Seni-Ramen</a></p>
                     </div>
                 </div>
 
+                <hr class="custom-separator">
+
                 <div id="buttons">
-                    <h2 id="explore" class="button" onclick="showSection('projectsSection')">EXPLORE MORE</h2>
-                    <h2 id="reflectionBtn" class="button" onclick="showSection('reflectionSection')">REFLECTION</h2>
+                    <label for="nav-projects" id="explore" class="button">EXPLORE MORE</label>
+                    <label for="nav-reflection" id="reflectionBtn" class="button">REFLECTION</label>
                 </div>
             </div>
         </div>
 
         <div id="projectsSection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('homeSection')">&#10094;</button>
+                <label for="nav-home" class="back-btn">&#10094;</label>
                 
                 <h1 id="projects" class="panelTitle">Projects</h1>
                 
                 <div class="grid-container">
-                    <h3 id="projectHumCom" class="project" onclick="showSection('activitySection')">HumCom Activities</h3>
-                    <h3 id="projectProg" class="project" onclick="showSection('programmingSection')">Programming</h3>
-                    <h3 id="projectAni" class="project" onclick="showSection('animationSection')">Animation</h3>
-                    <h3 id="projectMW" class="project" onclick="showSection('multimediaSection')">Multimedia Works</h3>
-                    <h3 id="projectProto" class="project" onclick="showSection('prototypesSection')">Prototypes</h3>
+                    <label for="nav-activity" id="projectHumCom" class="project">HumCom Activities</label>
+                    <label for="nav-programming" id="projectProg" class="project">Programming</label>
+                    <label for="nav-animation" id="projectAni" class="project">Animation</label>
+                    <label for="nav-multimedia" id="projectMW" class="project">Multimedia Works</label>
+                    <label for="nav-prototypes" id="projectProto" class="project">Prototypes</label>
                     
-                    <h3 id="projectnull2" class="project">Still in Progress</h3>
+                    <div id="projectnull2" class="project">Still in Progress</div>
                 </div>
 
                 <div class="decoration-arrow">🐑</div>
@@ -55,98 +81,279 @@
 
         <div id="activitySection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <label for="nav-projects" class="back-btn">&#10094;</label>
                 <h1 id="humcom" class="panelTitle">HumCom Act</h1>
 
                 <div class="cards-container">
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 1" data-details="details">
-                        <img src="LectureAct/Activity1.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 1</p>
-                        <p class="projDef">Click for details</p>
+                    
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-1" class="modal-toggle">
+                        <label for="modal-act-1" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity1.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 1</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-1" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-1" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity1.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 1</h2>
+                                <p>Details for Activity 1.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 2" data-details="details">
-                        <img src="LectureAct/Activity2.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 2</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-2" class="modal-toggle">
+                        <label for="modal-act-2" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity2.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 2</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-2" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-2" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity2.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 2</h2>
+                                <p>Details for Activity 2.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 3" data-details="details">
-                        <img src="LectureAct/Activity3.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 3</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-3" class="modal-toggle">
+                        <label for="modal-act-3" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity3.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 3</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-3" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-3" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity3.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 3</h2>
+                                <p>Details for Activity 3.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 4" data-details="details">
-                        <img src="LectureAct/Activity4.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 4</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-4" class="modal-toggle">
+                        <label for="modal-act-4" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity4.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 4</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-4" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-4" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity4.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 4</h2>
+                                <p>Details for Activity 4.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 5" data-details="details.">
-                        <img src="LectureAct/Activity5.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 5</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-5" class="modal-toggle">
+                        <label for="modal-act-5" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity5.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 5</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-5" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-5" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity5.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 5</h2>
+                                <p>Details for Activity 5.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 6" data-details="details">
-                        <img src="LectureAct/Activity6.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 6</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-6" class="modal-toggle">
+                        <label for="modal-act-6" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity6.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 6</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-6" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-6" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity6.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 6</h2>
+                                <p>Details for Activity 6.</p>
+                            </div>
+                        </div>
                     </div>
 
-                     <div class="projectCard" onclick="openModal(this)" data-title="Activity 7" data-details="details">
-                        <img src="LectureAct/Activity7.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 7</p>
-                        <p class="projDef">Click for details</p>
+                     <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-7" class="modal-toggle">
+                        <label for="modal-act-7" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity7.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 7</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-7" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-7" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity7.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 7</h2>
+                                <p>Details for Activity 7.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 8" data-details="details">
-                        <img src="LectureAct/Activity8.jpg" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 8</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-8" class="modal-toggle">
+                        <label for="modal-act-8" class="projectCard">
+                            <img src="HumCom/LectureAct/Activity8.jpg" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 8</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-8" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-8" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LectureAct/Activity8.jpg" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 8</h2>
+                                <p>Details for Activity 8.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 9" data-details="details">
-                        <img src="LabAct/Lab1.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 9</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-9" class="modal-toggle">
+                        <label for="modal-act-9" class="projectCard">
+                            <img src="HumCom/LabAct/Lab1.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 9</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-9" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-9" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab1.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 9</h2>
+                                <p>Details for Activity 9.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 10" data-details="details">
-                        <img src="LabAct/Lab2.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 10</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-10" class="modal-toggle">
+                        <label for="modal-act-10" class="projectCard">
+                            <img src="HumCom/LabAct/Lab2.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 10</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-10" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-10" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab2.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 10</h2>
+                                <p>Details for Activity 10.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 11" data-details="details">
-                        <img src="LabAct/Lab3.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 11</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-11" class="modal-toggle">
+                        <label for="modal-act-11" class="projectCard">
+                            <img src="HumCom/LabAct/Lab3.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 11</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-11" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-11" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab3.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 11</h2>
+                                <p>Details for Activity 11.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 12" data-details="details">
-                        <img src="LabAct/Lab4.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 12</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-12" class="modal-toggle">
+                        <label for="modal-act-12" class="projectCard">
+                            <img src="HumCom/LabAct/Lab4.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 12</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-12" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-12" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab4.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 12</h2>
+                                <p>Details for Activity 12.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 13" data-details="details">
-                        <img src="LabAct/Lab5.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 13</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-13" class="modal-toggle">
+                        <label for="modal-act-13" class="projectCard">
+                            <img src="HumCom/LabAct/Lab5.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 13</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-13" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-13" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab5.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 13</h2>
+                                <p>Details for Activity 13.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 14" data-details="details">
-                        <img src="LabAct/Lab6.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 14</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-14" class="modal-toggle">
+                        <label for="modal-act-14" class="projectCard">
+                            <img src="HumCom/LabAct/Lab6.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 14</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-14" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-14" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab6.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 14</h2>
+                                <p>Details for Activity 14.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 15" data-details="details">
-                        <img src="LabAct/Lab7.png" class="card-img" alt="Project Preview">
-                        <p class="projTitle">Activity 15</p>
-                        <p class="projDef">Click for details</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-act-15" class="modal-toggle">
+                        <label for="modal-act-15" class="projectCard">
+                            <img src="HumCom/LabAct/Lab7.png" class="card-img" alt="Project Preview">
+                            <p class="projTitle">Activity 15</p>
+                            <p class="projDef">Click for details</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-act-15" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-act-15" class="close-modal-btn">&times;</label>
+                                <img src="HumCom/LabAct/Lab7.png" class="modal-img-preview" alt="Full View">
+                                <h2>Activity 15</h2>
+                                <p>Details for Activity 15.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,12 +361,44 @@
 
         <div id="prototypesSection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <label for="nav-projects" class="back-btn">&#10094;</label>
                 <h1 id="prototypes" class="panelTitle">Prototypes</h1>
                 <div class="cards-container">
-                    <div id="protoCard1" class="projectCard" onclick="openModal(this)" data-title="Prototype 1" data-details="details">
-                        <p id="protoProject1" class="projTitle">Prototype 1</p>
-                        <p id="protoDefinition1" class="projDef">Concept Phase</p>
+
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-proto-1" class="modal-toggle">
+                        <label for="modal-proto-1" class="projectCard">
+                            <img src="Prototype/MINDS.png" class="card-img" alt="Project Preview">
+                            <p id="protoProject1" class="projTitle">Prototype 1</p>
+                            <p id="protoDefinition1" class="projDef">Concept Phase</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-proto-1" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-proto-1" class="close-modal-btn">&times;</label>
+                                <img src="Prototype/MINDS.png" class="modal-img-preview" alt="No Preview">
+                                <h2>Prototype 1</h2>
+                                <p>Details for Prototype 1.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-proto-2" class="modal-toggle">
+                        <label for="modal-proto-2" class="projectCard">
+                            <img src="Prototype/Portfolio.png" class="card-img" alt="Project Preview">
+                            <p id="protoProject2" class="projTitle">Prototype 2</p>
+                            <p id="protoDefinition2" class="projDef">Concept Phase</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-proto-2" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-proto-2" class="close-modal-btn">&times;</label>
+                                <img src="Prototype/Portfolio.png" class="modal-img-preview" alt="No Preview">
+                                <h2>Prototype 2</h2>
+                                <p>Details for Prototype 2.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -167,22 +406,59 @@
 
         <div id="programmingSection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <label for="nav-projects" class="back-btn">&#10094;</label>
                 <h1 id="programming" class="panelTitle">Programming</h1>
                 <div class="cards-container">
-                    <div id="progCard1" class="projectCard" onclick="openModal(this)" data-title="Programming Project 1" data-details="details">
-                        <p id="progProject1" class="projTitle">Project1</p>
-                        <p id="progDefinition1" class="projDef">yeah</p>
+                    
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-prog-1" class="modal-toggle">
+                        <label for="modal-prog-1" class="projectCard">
+                            <p id="progProject1" class="projTitle">Project1</p>
+                            <p id="progDefinition1" class="projDef">yeah</p>
+                        </label>
+                         <div class="modal-overlay">
+                            <label for="modal-prog-1" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-prog-1" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Programming 1</h2>
+                                <p>Details for Programming 1.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="progCard2" class="projectCard" onclick="openModal(this)" data-title="Programming Project 2" data-details="details">
-                        <p id="progProject2" class="projTitle">Project2</p>
-                        <p id="progDefinition2" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-prog-2" class="modal-toggle">
+                        <label for="modal-prog-2" class="projectCard">
+                            <p id="progProject2" class="projTitle">Project2</p>
+                            <p id="progDefinition2" class="projDef">yeah</p>
+                        </label>
+                         <div class="modal-overlay">
+                            <label for="modal-prog-2" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-prog-2" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Programming 2</h2>
+                                <p>Details for Programming 2.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div id="progCard3" class="projectCard" onclick="openModal(this)" data-title="Programming Project 3" data-details="details">
-                        <p id="progProject3" class="projTitle">Project3</p>
-                        <p id="progDefinition3" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-prog-3" class="modal-toggle">
+                        <label for="modal-prog-3" class="projectCard">
+                            <p id="progProject3" class="projTitle">Project3</p>
+                            <p id="progDefinition3" class="projDef">yeah</p>
+                        </label>
+                         <div class="modal-overlay">
+                            <label for="modal-prog-3" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-prog-3" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Programming 3</h2>
+                                <p>Details for Programming 3.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -190,22 +466,58 @@
 
         <div id="animationSection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <label for="nav-projects" class="back-btn">&#10094;</label>
                 <h1 id="animation" class="panelTitle">Animation</h1>
                 <div class="cards-container">
-                    <div id="animCard1" class="projectCard" onclick="openModal(this)" data-title="Animation Project 1" data-details="details">
-                        <p id="aniProject1" class="projTitle">Project1</p>
-                        <p id="aniDefinition1" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-anim-1" class="modal-toggle">
+                        <label for="modal-anim-1" class="projectCard">
+                            <p id="aniProject1" class="projTitle">Project1</p>
+                            <p id="aniDefinition1" class="projDef">yeah</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-anim-1" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-anim-1" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Animation 1</h2>
+                                <p>Details for Animation 1.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="animCard2" class="projectCard" onclick="openModal(this)" data-title="Animation Project 2" data-details="details">
-                        <p id="aniProject2" class="projTitle">Project2</p>
-                        <p id="aniDefinition2" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-anim-2" class="modal-toggle">
+                        <label for="modal-anim-2" class="projectCard">
+                            <p id="aniProject2" class="projTitle">Project2</p>
+                            <p id="aniDefinition2" class="projDef">yeah</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-anim-2" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-anim-2" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Animation 2</h2>
+                                <p>Details for Animation 2.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div id="animCard3" class="projectCard" onclick="openModal(this)" data-title="Animation Project 3" data-details="details">
-                        <p id="aniProject3" class="projTitle">Project3</p>
-                        <p id="aniDefinition3" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-anim-3" class="modal-toggle">
+                        <label for="modal-anim-3" class="projectCard">
+                            <p id="aniProject3" class="projTitle">Project3</p>
+                            <p id="aniDefinition3" class="projDef">yeah</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-anim-3" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-anim-3" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Animation 3</h2>
+                                <p>Details for Animation 3.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,22 +525,58 @@
 
         <div id="multimediaSection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <label for="nav-projects" class="back-btn">&#10094;</label>
                 <h1 id="multimedia" class="panelTitle">Multimedia Works</h1>
                 <div class="cards-container">
-                    <div id="multiCard1" class="projectCard" onclick="openModal(this)" data-title="Multimedia Project 1" data-details="details">
-                        <p id="multiProject1" class="projTitle">Project1</p>
-                        <p id="multiDefinition1" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-multi-1" class="modal-toggle">
+                        <label for="modal-multi-1" class="projectCard">
+                            <p id="multiProject1" class="projTitle">Project1</p>
+                            <p id="multiDefinition1" class="projDef">yeah</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-multi-1" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-multi-1" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Multimedia 1</h2>
+                                <p>Details for Multimedia 1.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="multiCard2" class="projectCard" onclick="openModal(this)" data-title="Multimedia Project 2" data-details="details">
-                        <p id="multiProject2" class="projTitle">Project2</p>
-                        <p id="multiDefinition2" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-multi-2" class="modal-toggle">
+                        <label for="modal-multi-2" class="projectCard">
+                            <p id="multiProject2" class="projTitle">Project2</p>
+                            <p id="multiDefinition2" class="projDef">yeah</p>
+                        </label>
+                        <div class="modal-overlay">
+                            <label for="modal-multi-2" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-multi-2" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Multimedia 2</h2>
+                                <p>Details for Multimedia 2.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div id="multiCard3" class="projectCard" onclick="openModal(this)" data-title="Multimedia Project 3" data-details="details">
-                        <p id="multiProject3" class="projTitle">Project3</p>
-                        <p id="multiDefinition3" class="projDef">yeah</p>
+                    <div class="card-wrapper">
+                        <input type="checkbox" id="modal-multi-3" class="modal-toggle">
+                        <label for="modal-multi-3" class="projectCard">
+                            <p id="multiProject3" class="projTitle">Project3</p>
+                            <p id="multiDefinition3" class="projDef">yeah</p>
+                        </label>
+                         <div class="modal-overlay">
+                            <label for="modal-multi-3" class="modal-close-bg"></label>
+                            <div class="modal-content">
+                                <label for="modal-multi-3" class="close-modal-btn">&times;</label>
+                                <img src="DesignPhoto/viewPhoto.jpg" class="modal-img-preview" alt="No Preview">
+                                <h2>Multimedia 3</h2>
+                                <p>Details for Multimedia 3.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -236,7 +584,7 @@
 
         <div id="reflectionSection" class="view-section">
             <div class="content-card">
-                <button class="back-btn" onclick="showSection('homeSection')">&#10094;</button>
+                <label for="nav-home" class="back-btn">&#10094;</label>
                 <h1 id="reflectionTitle" class="panelTitle">Reflection</h1>
                 <p id="reflectionPaper" style="text-align: justify; line-height: 1.6; color: #ddd;">
                     djfgdjflk;szgvdfkjkj kjldfsdkljfghsdfjkgldfg <br><br>
@@ -247,52 +595,5 @@
 
     </div>
 
-    <div id="projectModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Project Image">
-            <h2 id="modalTitle">Project Title</h2>
-            <p id="modalDescription">Project detailed description goes here.</p>
-        </div>
-    </div>
-
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.view-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            const target = document.getElementById(sectionId);
-            if (target) {
-                target.classList.add('active');
-            }
-        }
-
-        function openModal(element) {
-            const modal = document.getElementById('projectModal');
-            const title = element.getAttribute('data-title') || "Project Title";
-            const details = element.getAttribute('data-details') || "No details provided for this project.";
-            const imgTag = element.querySelector('.card-img');
-            const imageSrc = imgTag ? imgTag.src : "DesignPhoto/viewPhoto.jpg";
-
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = details;
-            document.getElementById('modalImage').src = imageSrc;
-
-            modal.style.display = "flex";
-        }
-
-        function closeModal() {
-            document.getElementById('projectModal').style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>

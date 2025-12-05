@@ -10,6 +10,16 @@
     --modal-overlay: rgba(0, 0, 0, 0.85);
 }
 
+a {
+    text-decoration: none;
+    color: grey;
+  }
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,7 +28,7 @@
 }
 
 body {
-    background: url('Black And White Animation GIF by James Zanoni.gif') no-repeat center center fixed; 
+    background: url('DesignPhotos/Black\ And\ White\ Animation\ GIF\ by\ James\ Zanoni.gif') no-repeat center center fixed; 
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -96,12 +106,17 @@ body {
     width: 120px;
     height: 120px;
     background-color: #ddd; 
-    background-image: url('Profile.JPG'); 
+    background-image: url('DesignPhotos/Profile.JPG'); 
     background-size: cover;
     border-radius: 50%;
     border: 4px solid #fff;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.profile-pic:hover{
+    background-image: url('DesignPhotos/lebron-sunshine-lebron-james-sunshine.gif');
+    background-position: right 8px center;
 }
 
 #name {
@@ -340,7 +355,7 @@ body {
 #modalImage {
     width: 100%;
     max-height: 300px;
-    object-fit: contain;
+    object-fit: fill;
     border-radius: 8px;
     margin-bottom: 20px;
     background-color: #333;

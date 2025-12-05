@@ -4,105 +4,281 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="personalDetails">
-        <h1 id="name">Jezreel M. Onos</h1>
-        <h2 id="aboutMe">ABOUT ME:</h2>
-        <h2 id="selfDescription">I am a Person</h2>
-        <p id="number" class="contact">Phone Number: 09954206679</p>
-        <p id="email" class="contact">Email: 20256388@s.ubaguio.edu</p>
-        <p id="gitHub" class="contact">GIThub: Seni-Ramen</p>
+
+    <div id="main-container">
+        <div id="homeSection" class="view-section active">
+            <div class="content-card">
+                <div class="profile-pic"></div>
+
+                <div id="personalDetails">
+                    <h1 id="name">Jezreel M. Onos</h1>
+                    <h2 id="aboutMe">ABOUT ME:</h2>
+                    <h2 id="selfDescription">I am a Person</h2>
+                    
+                    <div style="margin-top: 20px; width: 100%;">
+                        <p id="number" class="contact">Phone Number: 09954206679</p>
+                        <p id="email" class="contact">Email: 20256388@s.ubaguio.edu</p>
+                        <p id="gitHub" class="contact">GIThub: Seni-Ramen</p>
+                    </div>
+                </div>
+
+                <div id="buttons">
+                    <h2 id="explore" class="button" onclick="showSection('projectsSection')">EXPLORE MORE</h2>
+                    <h2 id="reflectionBtn" class="button" onclick="showSection('reflectionSection')">REFLECTION</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="projectsSection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('homeSection')">&#10094;</button>
+                
+                <h1 id="projects" class="panelTitle">Projects</h1>
+                
+                <div class="grid-container">
+                    <h3 id="projectProg" class="project" onclick="showSection('programmingSection')">Programming</h3>
+                    <h3 id="projectAni" class="project" onclick="showSection('animationSection')">Animation</h3>
+                    <h3 id="projectMW" class="project" onclick="showSection('multimediaSection')">Multimedia Works</h3>
+                    <h3 id="projectHumCom" class="project" onclick="showSection('activitySection')">HumCom Activities</h3>
+                    <h3 id="projectProto" class="project" onclick="showSection('prototypesSection')">Prototypes</h3>
+                    
+                    <h3 id="projectnull2" class="project">Still in Progress</h3>
+                </div>
+
+                <div class="decoration-arrow">🐑</div>
+            </div>
+        </div>
+
+        <div id="activitySection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <h1 id="humcom" class="panelTitle">HumCom Act</h1>
+
+                <div class="cards-container">
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 1" data-details="details">
+                        <img src="Profile.JPG" class="card-img" alt="Project Preview">
+                        <p class="projTitle">Activity 1</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 2" data-details="details">
+                        <p class="projTitle">Activity 2</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 3" data-details="details">
+                        <p class="projTitle">Activity 3</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 4" data-details="details">
+                        <p class="projTitle">Activity 4</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 5" data-details="details.">
+                        <p class="projTitle">Activity 5</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 6" data-details="details">
+                        <p class="projTitle">Activity 6</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                     <div class="projectCard" onclick="openModal(this)" data-title="Activity 7" data-details="details">
+                        <p class="projTitle">Activity 7</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 8" data-details="details">
+                        <p class="projTitle">Activity 8</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 9" data-details="details">
+                        <p class="projTitle">Activity 9</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+                    
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 10" data-details="details">
+                        <p class="projTitle">Activity 10</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 11" data-details="details">
+                        <p class="projTitle">Activity 11</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 12" data-details="details">
+                        <p class="projTitle">Activity 12</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 13" data-details="details">
+                        <p class="projTitle">Activity 13</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 14" data-details="details">
+                        <p class="projTitle">Activity 14</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+
+                    <div class="projectCard" onclick="openModal(this)" data-title="Activity 15" data-details="details">
+                        <p class="projTitle">Activity 15</p>
+                        <p class="projDef">Click for details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="prototypesSection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <h1 id="prototypes" class="panelTitle">Prototypes</h1>
+                <div class="cards-container">
+                    <div id="protoCard1" class="projectCard" onclick="openModal(this)" data-title="Prototype 1" data-details="details">
+                        <p id="protoProject1" class="projTitle">Prototype 1</p>
+                        <p id="protoDefinition1" class="projDef">Concept Phase</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="programmingSection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <h1 id="programming" class="panelTitle">Programming</h1>
+                <div class="cards-container">
+                    <div id="progCard1" class="projectCard" onclick="openModal(this)" data-title="Programming Project 1" data-details="details">
+                        <p id="progProject1" class="projTitle">Project1</p>
+                        <p id="progDefinition1" class="projDef">yeah</p>
+                    </div>
+
+                    <div id="progCard2" class="projectCard" onclick="openModal(this)" data-title="Programming Project 2" data-details="details">
+                        <p id="progProject2" class="projTitle">Project2</p>
+                        <p id="progDefinition2" class="projDef">yeah</p>
+                    </div>
+                    
+                    <div id="progCard3" class="projectCard" onclick="openModal(this)" data-title="Programming Project 3" data-details="details">
+                        <p id="progProject3" class="projTitle">Project3</p>
+                        <p id="progDefinition3" class="projDef">yeah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="animationSection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <h1 id="animation" class="panelTitle">Animation</h1>
+                <div class="cards-container">
+                    <div id="animCard1" class="projectCard" onclick="openModal(this)" data-title="Animation Project 1" data-details="details">
+                        <p id="aniProject1" class="projTitle">Project1</p>
+                        <p id="aniDefinition1" class="projDef">yeah</p>
+                    </div>
+
+                    <div id="animCard2" class="projectCard" onclick="openModal(this)" data-title="Animation Project 2" data-details="details">
+                        <p id="aniProject2" class="projTitle">Project2</p>
+                        <p id="aniDefinition2" class="projDef">yeah</p>
+                    </div>
+                    
+                    <div id="animCard3" class="projectCard" onclick="openModal(this)" data-title="Animation Project 3" data-details="details">
+                        <p id="aniProject3" class="projTitle">Project3</p>
+                        <p id="aniDefinition3" class="projDef">yeah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="multimediaSection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('projectsSection')">&#10094;</button>
+                <h1 id="multimedia" class="panelTitle">Multimedia Works</h1>
+                <div class="cards-container">
+                    <div id="multiCard1" class="projectCard" onclick="openModal(this)" data-title="Multimedia Project 1" data-details="details">
+                        <p id="multiProject1" class="projTitle">Project1</p>
+                        <p id="multiDefinition1" class="projDef">yeah</p>
+                    </div>
+
+                    <div id="multiCard2" class="projectCard" onclick="openModal(this)" data-title="Multimedia Project 2" data-details="details">
+                        <p id="multiProject2" class="projTitle">Project2</p>
+                        <p id="multiDefinition2" class="projDef">yeah</p>
+                    </div>
+                    
+                    <div id="multiCard3" class="projectCard" onclick="openModal(this)" data-title="Multimedia Project 3" data-details="details">
+                        <p id="multiProject3" class="projTitle">Project3</p>
+                        <p id="multiDefinition3" class="projDef">yeah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reflectionSection" class="view-section">
+            <div class="content-card">
+                <button class="back-btn" onclick="showSection('homeSection')">&#10094;</button>
+                <h1 id="reflectionTitle" class="panelTitle">Reflection</h1>
+                <p id="reflectionPaper" style="text-align: justify; line-height: 1.6; color: #ddd;">
+                    djfgdjflk;szgvdfkjkj kjldfsdkljfghsdfjkgldfg <br><br>
+                </p>
+                <p style="margin-top: 30px; font-style: italic; color: #888;">The End...</p>
+            </div>
+        </div>
+
     </div>
 
-    <div id="buttons">
-        <h2 id="explore" class="button">EXPLORE MORE</h2>
-        <h2 id="reflection" class="button">REFLECTION</h2>
-    </div>
-
-    <div id="projectPanel" class="panels">
-        <h1 id="projects" class="panelTitle">Projects</h1>
-        <h3 id="projectProg" class="project">Programming</h3>
-        <h3 id="projectAni" class="project">Animation</h3>
-        <h3 id="projectMW" class="project">Multimedia Works</h3>
-        <h3 id="projectnull1" class="project">Still in Progress</h3>
-        <h3 id="projectnull1" class="project">Still in Progress</h3>
-        <h3 id="projectnull1" class="project">Still in Progress</h3>
-    </div>
-
-    <div id="activityPanel" class="panels">
-        <h1 id="humcom" class="panelTitle">HumCom Act</h1>
-        <h3 id="activityProject1" class="activity">Activity 1</h3>
-        <h3 id="activityProject2" class="activity">Activity 2</h3>
-        <h3 id="activityProject3" class="activity">Activity 3</h3>
-        <h3 id="activityProject4" class="activity">Activity 4</h3>
-        <h3 id="activityProject5" class="activity">Activity 5</h3>
-        <h3 id="activityProject6" class="activity">Activity 6</h3>
-        <h3 id="activityProject7" class="activity">Activity 7</h3>
-        <h3 id="activityProject8" class="activity">Activity 8</h3>
-        <h3 id="activityProject9" class="activity">Activity 9</h3>
-        <h3 id="activityProject10" class="activity">Activity 10</h3>
-        <h3 id="activityProject11" class="activity">Activity 11</h3>
-        <h3 id="activityProject12" class="activity">Activity 12</h3>
-    </div>
-
-    <div id="programmingPanel" class="panels">
-        <h1 id="programming" class="panelTitle">Programming</h1>
-        <div id="progCard1" class="projectCard">
-            <p id="progProject1" class="projTitle">Project1</p>
-            <p id="progDefinition1" class="projDef">yeah</p>
-        </div>
-
-        <div id="progCard2" class="projectCard">
-            <p id="progProject2" class="projTitle">Project2</p>
-            <p id="progDefinition2" class="projDef">yeah</p>
-        </div>
-        
-        <div id="progCard3" class="projectCard">
-            <p id="progProject3" class="projTitle">Project3</p>
-            <p id="progDefinition3" class="projDef">yeah</p>
+    <div id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Project Image">
+            <h2 id="modalTitle">Project Title</h2>
+            <p id="modalDescription">Project detailed description goes here.</p>
         </div>
     </div>
 
-    <div id="animationPanel" class="panels">
-        <h1 id="animation" class="panelTitle">Animation</h1>
-        <div id="animCard1" class="projectCard">
-            <p id="aniProject1" class="projTitle">Project1</p>
-            <p id="aniDefinition1" class="projDef">yeah</p>
-        </div>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.view-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
 
-        <div id="animCard2" class="projectCard">
-            <p id="aniProject2" class="projTitle">Project2</p>
-            <p id="aniDefinition2" class="projDef">yeah</p>
-        </div>
-        
-        <div id="animCard3" class="projectCard">
-            <p id="aniProject3" class="projTitle">Project3</p>
-            <p id="aniDefinition3" class="projDef">yeah</p>
-     </div>
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
 
-    <div id="multiPanel" class="panels">
-        <h1 id="multimedia" class="panelTitle">Multimedia Works</h1>
-        <div id="multiCard1" class="projectCard">
-            <p id="multiProject1" class="projTitle">Project1</p>
-            <p id="multiDefinition1" class="projDef">yeah</p>
-        </div>
+        function openModal(element) {
+            const modal = document.getElementById('projectModal');
+            const title = element.getAttribute('data-title') || "Project Title";
+            const details = element.getAttribute('data-details') || "No details provided for this project.";
+            const imgTag = element.querySelector('.card-img');
+            const imageSrc = imgTag ? imgTag.src : "viewPhoto.jpg";
 
-        <div id="multiCard2" class="projectCard">
-            <p id="multiProject2" class="projTitle">Project2</p>
-            <p id="multiDefinition2" class="projDef">yeah</p>
-        </div>
-        
-        <div id="multiCard3" class="projectCard">
-            <p id="multiProject3" class="projTitle">Project3</p>
-            <p id="multiDefinition3" class="projDef">yeah</p>
-        </div>
-    </div>
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = details;
+            document.getElementById('modalImage').src = imageSrc;
 
-    <div id="reflectionPanel" class="panels">
-        <h1 id="reflection" class="panelTitle">Reflection</h1>
-        <p id="reflectionPaper">djfgdjflk;szgvdfkjkj kjldfsdkljfghsdfjkgldfg</p>
-    </div>
+            modal.style.display = "flex";
+        }
 
+        function closeModal() {
+            document.getElementById('projectModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

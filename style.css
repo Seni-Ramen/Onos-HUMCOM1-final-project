@@ -28,7 +28,6 @@ a:hover {
 }
 
 body {
-    /* Using your original path */
     background: url('DesignPhotos/Black\ And\ White\ Animation\ GIF\ by\ James\ Zanoni.gif') no-repeat center center fixed; 
     background-size: cover;
     min-height: 100vh;
@@ -259,25 +258,64 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .button {
-    background-color: var(--button-bg);
+    position: relative;
+    z-index: 1;
+    background-color: transparent; 
     color: var(--button-text);
     padding: 12px 30px;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     text-align: center;
-    display: inline-block; 
+    display: inline-block;
+    border: none;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--button-bg); 
+    border-radius: 50px;
+    z-index: -1; 
+    transition: background-color 0.2s;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: -3px; left: -3px; right: -3px; bottom: -3px; 
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%; 
+    z-index: -2; 
+    border-radius: 55px;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    animation: rainbowBorder 20s linear infinite;
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+.button:hover::after {
+    background-color: var(--button-hover); 
 }
 
 .button:hover {
-    background-color: var(--button-hover);
     transform: translateY(-2px);
 }
 
 .button:active {
     transform: translateY(0);
+}
+
+@keyframes rainbowBorder {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
 
 .panelTitle {
@@ -319,8 +357,41 @@ input[type="radio"], input[type="checkbox"] {
 
 .project:hover, .activity:hover {
     transform: scale(1.05);
-    background-color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#projectHumCom:hover {
+    background: url('DesignPhotos/HCI.gif');
+    background-size: 45%;
+    color: white;
+}
+
+#projectProg:hover {
+    background: url('DesignPhotos/Programming.gif');
+    background-size: 80%;
+    background-position: center;
+    color: white;
+}
+
+#projectAni:hover {
+    background: url('DesignPhotos/Animation.gif');
+    background-size: 100%;
+    background-position: center;
+    color: white;
+}
+
+#projectMW:hover {
+    background: url('DesignPhotos/MultiMedia.gif');
+    background-size: 70%;
+    background-position: center;
+    color: white;
+}
+
+#projectProto:hover {
+    background: url('DesignPhotos/Prototype.gif');
+    background-size: 100%;
+    background-position: center;
+    color: white;
 }
 
 .cards-container {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -41,12 +42,24 @@
                 <div id="personalDetails">
                     <h1 id="name">Jezreel M. Onos</h1>
                     <h2 id="aboutMe">ABOUT ME:</h2>
-                    <h2 id="selfDescription">I am a Person</h2>
+
+                    <input type="checkbox" id="toggle-desc">
+                    <h2 id="selfDescription">As a Computer Science student and future developer, I do my best work where clear logic meets pure art, always trying to see the deep design behind the systems I build and the work I create. My path is led by a strong wish to learn tech, which moves me to study hardware, master Java and other languages, and look at data, but I match this thinking mind with a specific view on art that values shape and color over just copying real life. Whether I am writing rules for AI, coding, or editing videos in Adobe Premiere Pro, I am someone who sees value in how things are made, using my skills to close the gap between hard code and great visual works.</h2>
+                    <label for="toggle-desc" class="desc-btn"></label>
                     
                     <div class="contact-container">
-                        <p id="number" class="contact"><i class="fas fa-phone"></i> 09876543210</p>
-                        <p id="email" class="contact"><i class="fas fa-envelope"></i> 20256388@s.ubaguio.edu</p>
-                        <p id="gitHub" class="contact"><i class="fab fa-github"></i> <a href="https://github.com/Seni-Ramen" id="gitHub">Seni-Ramen</a></p>
+                        <div id="number" class="contact">
+                            <i class="fas fa-phone"></i> 
+                            <span>09876543210</span>
+                        </div>
+                        <div id="email" class="contact">
+                            <i class="fas fa-envelope"></i> 
+                            <span>20256388@s.ubaguio.edu</span>
+                        </div>
+                        <a href="https://github.com/Seni-Ramen" target="_blank" id="gitHub" class="contact">
+                            <i class="fab fa-github"></i> 
+                            <span>Seni-Ramen</span>
+                        </a>
                     </div>
                 </div>
 
@@ -63,10 +76,15 @@
             <div class="content-card">
                 <label for="nav-home" class="back-btn">&#10094;</label>
                 
-                <h1 id="projects" class="panelTitle">Projects</h1>
-                
-                <div class="grid-container">
+                <h1 class="panelTitle">HumCom</h1>
+                <div class="single-item-container">
                     <label for="nav-activity" id="projectHumCom" class="project">HumCom Activities</label>
+                </div>
+
+                <hr class="custom-separator">
+
+                <h1 class="panelTitle">General Projects</h1>
+                <div class="grid-container">
                     <label for="nav-programming" id="projectProg" class="project">Programming</label>
                     <label for="nav-animation" id="projectAni" class="project">Animation</label>
                     <label for="nav-multimedia" id="projectMW" class="project">Multimedia Works</label>
@@ -387,20 +405,24 @@
                     <div class="card-wrapper">
                         <input type="checkbox" id="modal-proto-1" class="modal-toggle">
                         <label for="modal-proto-1" class="projectCard">
-                            <img src="Prototype/MINDS.png" class="card-img" alt="Project Preview">
-                            <p id="protoProject1" class="projTitle">Mobile Prototype</p>
-                            <p id="protoDefinition2" class="projDef">Click for Full View</p>
+                            <div class="card-placeholder">
+                                <img src="Prototype/MINDS.jpg" class="card-img" alt="Project Preview">
+                            </div>
+                            <p id="protoProject1" class="projTitle">Prototype 1 (MINDS)</p>
+                            <p id="protoDefinition1" class="projDef">Mobile App Concept</p>
                         </label>
                         <div class="modal-overlay">
                             <label for="modal-proto-1" class="modal-close-bg"></label>
-                            <div class="modal-content">
+
+                            <div class="modal-content" style="max-width: 800px; width: 95%;"> 
                                 <label for="modal-proto-1" class="close-modal-btn">&times;</label>
                                 <iframe
-                                    src="Prototype/MINDS.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                                    src="Prototype/MINDS.pdf#toolbar=0&navpanes=0&scrollbar=0" 
                                     width="100%" height="600px" 
                                     style="border: none;">
                                 </iframe>
-                                <h2>Mobile Prototype</h2>
+                                <h2>MINDS App Prototype</h2>
+                                <p>Screens from the Mental Illness Navigation & Digital Support App</p>
                             </div>
                         </div>
                     </div>
@@ -408,7 +430,7 @@
                     <div class="card-wrapper">
                         <input type="checkbox" id="modal-proto-2" class="modal-toggle">
                         <label for="modal-proto-2" class="projectCard">
-                            <img src="Prototype/Portfolio.png" class="card-img" alt="Project Preview">
+                            <img src="Prototype/Portfolio.jpg" class="card-img" alt="Project Preview">
                             <p id="protoProject2" class="projTitle">Portfolio Prototype(Draft)</p>
                             <p id="protoDefinition2" class="projDef">Click for Full View</p>
                         </label>
@@ -416,7 +438,7 @@
                             <label for="modal-proto-2" class="modal-close-bg"></label>
                             <div class="modal-content">
                                 <label for="modal-proto-2" class="close-modal-btn">&times;</label>
-                                <img src="Prototype/Portfolio.png" class="modal-img-preview" alt="No Preview">
+                                <img src="Prototype/Portfolio.jpg" class="modal-img-preview" alt="No Preview">
                                 <h2>Portfolio Prototype(Draft)</h2>
                             </div>
                         </div>

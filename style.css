@@ -475,7 +475,7 @@ input[type="radio"], input[type="checkbox"] {
 
 #projectHumCom:hover {
     background: url('DesignPhotos/HCI.gif');
-    background-size: 45%;
+    background-size: 55%;
     color: white;
 }
 
@@ -505,6 +505,14 @@ input[type="radio"], input[type="checkbox"] {
     background-size: 100%;
     background-position: center;
     color: white;
+}
+
+#projectnull2:hover {
+    background: url('DesignPhotos/StillinProgress.gif');
+    background-size: 75%;
+    background-position: center;
+    color: white;
+    cursor: default;
 }
 
 .cards-container {
